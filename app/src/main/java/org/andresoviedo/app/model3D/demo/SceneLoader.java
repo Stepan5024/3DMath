@@ -14,6 +14,7 @@ import org.andresoviedo.android_3d_model_engine.services.Object3DBuilder;
 import org.andresoviedo.android_3d_model_engine.services.collada.ColladaLoaderTask;
 import org.andresoviedo.android_3d_model_engine.services.stl.STLLoaderTask;
 import org.andresoviedo.android_3d_model_engine.services.wavefront.WavefrontLoaderTask;
+import org.andresoviedo.app.model3D.MainActivity;
 import org.andresoviedo.app.model3D.view.ModelActivity;
 import org.andresoviedo.app.model3D.view.ModelRenderer;
 import org.andresoviedo.util.android.ContentUtils;
@@ -159,6 +160,7 @@ public class SceneLoader implements LoaderTask.Callback {
         Uri uri = parent.getParamUri();
         Log.i("Object3DBuilder", "Loading model " + uri + ". async and parallel..");
         if (uri.toString().toLowerCase().endsWith(".obj") || parent.getParamType() == 0) {
+            Toast.makeText(parent, "" + uri, Toast.LENGTH_LONG).show();
             new WavefrontLoaderTask(parent, uri, this).execute();
         } else if (uri.toString().toLowerCase().endsWith(".stl") || parent.getParamType() == 1) {
             Log.i("Object3DBuilder", "Loading STL object from: "+uri);

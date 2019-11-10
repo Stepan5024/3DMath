@@ -19,6 +19,8 @@ public abstract class LoaderTask extends AsyncTask<Void, Integer, List<Object3DD
 	/**
 	 * URL to the 3D model
 	 */
+
+
 	protected final Uri uri;
 	/**
 	 * Callback to notify of events
@@ -36,6 +38,7 @@ public abstract class LoaderTask extends AsyncTask<Void, Integer, List<Object3DD
 	 */
 	public LoaderTask(Activity parent, Uri uri, Callback callback) {
 		this.uri = uri;
+
 		// this.dialog = ProgressDialog.show(this.parent, "Please wait ...", "Loading model data...", true);
 		// this.dialog.setTitle(modelId);
 		this.dialog = new ProgressDialog(parent);
